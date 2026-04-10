@@ -8,27 +8,19 @@ This project extends the findings from the
 [Gene Expression EDA project](https://github.com/Mesolongo/gene-expression-analysis) 
 by reproducing and deepening key results using pure SQL.
 
----
-
 ## Dataset
 - **Source:** TCGA (The Cancer Genome Atlas) RNA-Seq dataset
 - **Samples:** 801
 - **Cancer types:** BRCA, KIRC, COAD, LUAD, PRAD
 - **Features:** Top 20 high-variance genes selected from 20,531
 
----
-
 ## Database Schema
 Three normalized tables in PostgreSQL:
 
-```
-cancer_types     — cancer type lookup (code, full name)
-patients         — one row per sample (sample_id, cancer_type_code)
-gene_expression  — long format (sample_id, gene_name, expression_value)
-​```
-
----
-
+    cancer_types     — cancer type lookup (code, full name)
+    patients         — one row per sample (sample_id, cancer_type_code)
+    gene_expression  — long format (sample_id, gene_name, expression_value)
+​
 ## Analysis Sections
 
 ### Section 1 — Dataset Overview
@@ -51,8 +43,6 @@ for gene_15589.
   ranks mid-table for gene_15589 — confirming gene-selective rather than global suppression
 - Window functions reveal per-group ranking without losing row-level detail
 
----
-
 ## SQL Concepts Covered
 - SELECT, WHERE, GROUP BY, HAVING, ORDER BY
 - INNER JOIN, LEFT JOIN, RIGHT JOIN
@@ -66,21 +56,17 @@ for gene_15589.
 - Jupyter Notebook
 - VS Code
 
----
-
 ## Project Structure
-```
-sql-biomedical-analysis/
-├── data/                        # Raw CSV files (not tracked)
-├── schema/01_create_tables.sql  # Database schema
-├── load/02_load_data.py         # Data loading pipeline
-├── queries/                     # Module exercise queries
-├── notebooks/sql_analysis.ipynb # Capstone analysis notebook
-├── outputs/                     # Generated figures
-└── README.md
-```
 
----
+    sql-biomedical-analysis/
+    ├── data/                        # Raw CSV files (not tracked)
+    ├── schema/01_create_tables.sql  # Database schema
+    ├── load/02_load_data.py         # Data loading pipeline
+    ├── queries/                     # Module exercise queries
+    ├── notebooks/sql_analysis.ipynb # Capstone analysis notebook
+    ├── outputs/                     # Generated figures
+    └── README.md
+
 
 ## Related Projects
 - [Breast Cancer EDA](https://github.com/Mesolongo/breast-cancer-eda)
